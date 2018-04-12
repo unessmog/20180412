@@ -4,7 +4,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class PromptThree extends JFrame {
-    private JButton inputBtn = new JButton();
+    private JTextField inputText = new JTextField();
     private JButton verifyBtn = new JButton();
     private JButton cancelBtn = new JButton();
     
@@ -12,6 +12,7 @@ public class PromptThree extends JFrame {
         super();
         this.setTitle("PromptThree");
 		this.getContentPane().setLayout(null);
+        this.setBounds(300, 300, 380, 340);
         this.add(makeInputArea());
         this.add(makeVerifyBtn());
         this.add(makeCancelBtn());
@@ -19,14 +20,14 @@ public class PromptThree extends JFrame {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
     
-    private JButton makeInputArea() {
-		inputBtn.setBounds(40, 40, 100, 30);
-		inputBtn.addActionListener(new ActionListener() {
+    private JTextField makeInputArea() {
+		inputText.setBounds(40, 40, 100, 30);
+		inputText.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showInputDialog(inputBtn, "input an integer");
+				JOptionPane.showInputDialog(inputText, "input an integer");
 			}
 		});
-		return inputBtn;
+		return inputText;
 	}
     
     private JButton makeVerifyBtn() {
@@ -45,7 +46,7 @@ public class PromptThree extends JFrame {
 		cancelBtn.setBounds(40, 40, 100, 30);
 		cancelBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showConfirmDialog(cancelBtn, "Hello World!");
+				JOptionPane.showConfirmDialog(cancelBtn, "closing");
 			}
 		});
 		return cancelBtn;

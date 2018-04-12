@@ -24,7 +24,9 @@ public class PromptThree extends JFrame {
 		inputText.setBounds(40, 40, 100, 30);
 		inputText.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showInputDialog(inputText, "input an integer");
+                String text = inputText.getText();
+                text = text + "\n";
+                inputText.selectAll();
 			}
 		});
 		return inputText;

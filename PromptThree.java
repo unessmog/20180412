@@ -11,7 +11,7 @@ public class PromptThree extends JFrame {
     public PromptThree() {
         super();
         this.setTitle("PromptThree");
-		this.getContentPane().setLayout(null);
+        this.getContentPane().setLayout(null);
         this.setBounds(300, 300, 280, 300);
         this.add(makeInputArea());
         this.add(makeVerifyBtn());
@@ -43,24 +43,24 @@ public class PromptThree extends JFrame {
     
     //widgets
     private JTextField makeInputArea() {
-		inputText.setBounds(80, 40, 100, 30);
-		inputText.addActionListener(fieldListener);
-		return inputText;
-	}
+        inputText.setBounds(80, 40, 100, 30);
+        inputText.addActionListener(fieldListener);
+        return inputText;
+    }
     
     private JButton makeVerifyBtn() {
-		verifyBtn.setText("Verify");
-		verifyBtn.setBounds(80, 80, 100, 30);
-		verifyBtn.addActionListener(verifyListener);
-		return verifyBtn;
-	}
+        verifyBtn.setText("Verify");
+        verifyBtn.setBounds(80, 80, 100, 30);
+        verifyBtn.addActionListener(verifyListener);
+        return verifyBtn;
+    }
     
     private JButton makeCancelBtn() {
-		cancelBtn.setText("Cancel");
-		cancelBtn.setBounds(80, 120, 100, 30);
-		cancelBtn.addActionListener(cancelListener);
-		return cancelBtn;
-	}
+        cancelBtn.setText("Cancel");
+        cancelBtn.setBounds(80, 120, 100, 30);
+        cancelBtn.addActionListener(cancelListener);
+        return cancelBtn;
+    }
     
     public static void main(String[] args) throws Exception {
         SwingUtilities.invokeAndWait(() -> new PromptThree());

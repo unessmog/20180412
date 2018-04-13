@@ -38,12 +38,13 @@ public class PromptFour {
         return(newLogin);
     }
     
-    public static void printOut(String prompt) {
-        if (prompt != null) {
-            System.out.print(prompt);
+    //io tools
+    public static void printText(String text) {
+        if (text != null) {
+            System.out.print(text);
         }
         else {
-            System.out.print("\n");
+            System.out.print(".");
         }
     }
     
@@ -79,9 +80,9 @@ public class PromptFour {
         if (matchName > 0) {
         }
         else {
-            printOut("Couldn't find user in system. Create a new one?\n");
+            printText("Couldn't find user in system. Create a new one?\n");
             response = getInput("Y/N: ");
-            printOut("--- Creating new account ---\n");
+            printText("--- Creating new account ---\n");
             username = getInput("Username: ");
             password = getInput("Password: ");
             newLogin = loginData(username, password);

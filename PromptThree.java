@@ -12,7 +12,7 @@ public class PromptThree extends JFrame {
         super();
         this.setTitle("PromptThree");
 		this.getContentPane().setLayout(null);
-        this.setBounds(300, 300, 380, 340);
+        this.setBounds(300, 300, 280, 300);
         this.add(makeInputArea());
         this.add(makeVerifyBtn());
         this.add(makeCancelBtn());
@@ -21,7 +21,7 @@ public class PromptThree extends JFrame {
     }
     
     private JTextField makeInputArea() {
-		inputText.setBounds(40, 40, 100, 30);
+		inputText.setBounds(80, 40, 100, 30);
 		inputText.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
                 String text = inputText.getText();
@@ -34,7 +34,7 @@ public class PromptThree extends JFrame {
     
     private JButton makeVerifyBtn() {
 		verifyBtn.setText("Verify");
-		verifyBtn.setBounds(40, 80, 100, 30);
+		verifyBtn.setBounds(80, 80, 100, 30);
 		verifyBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(verifyBtn, "OK");
@@ -44,8 +44,8 @@ public class PromptThree extends JFrame {
 	}
     
     private JButton makeCancelBtn() {
-		cancelBtn.setText("Click me!");
-		cancelBtn.setBounds(40, 120, 100, 30);
+		cancelBtn.setText("Cancel");
+		cancelBtn.setBounds(80, 120, 100, 30);
 		cancelBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showConfirmDialog(cancelBtn, "closing");

@@ -20,37 +20,45 @@ public class PromptThree extends JFrame {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
     
+    //listeners
+    private ActionListener fieldListener = new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+            String text = inputText.getText();
+            text = text + "\n";
+            inputText.selectAll();
+        }
+    };
+    
+    private ActionListener verifyListener = new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+            JOptionPane.showMessageDialog(verifyBtn, "OK");
+        }
+    };
+    
+    private ActionListener cancelListener = new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+            JOptionPane.showConfirmDialog(cancelBtn, "closing");
+        }
+    };
+    
+    //widgets
     private JTextField makeInputArea() {
 		inputText.setBounds(80, 40, 100, 30);
-		inputText.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-                String text = inputText.getText();
-                text = text + "\n";
-                inputText.selectAll();
-			}
-		});
+		inputText.addActionListener(fieldListener);
 		return inputText;
 	}
     
     private JButton makeVerifyBtn() {
 		verifyBtn.setText("Verify");
 		verifyBtn.setBounds(80, 80, 100, 30);
-		verifyBtn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(verifyBtn, "OK");
-			}
-		});
+		verifyBtn.addActionListener(verifyListener);
 		return verifyBtn;
 	}
     
     private JButton makeCancelBtn() {
 		cancelBtn.setText("Cancel");
 		cancelBtn.setBounds(80, 120, 100, 30);
-		cancelBtn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showConfirmDialog(cancelBtn, "closing");
-			}
-		});
+		cancelBtn.addActionListener(cancelListener);
 		return cancelBtn;
 	}
     

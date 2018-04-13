@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 public class PromptThree extends JFrame {
     private JTextField inputText = new JTextField();
     private JButton verifyBtn = new JButton();
-    private JButton cancelBtn = new JButton();
+    private JButton closeBtn = new JButton();
     
     public PromptThree() {
         super();
@@ -15,7 +15,7 @@ public class PromptThree extends JFrame {
         this.setBounds(300, 300, 280, 300);
         this.add(makeInputArea());
         this.add(makeVerifyBtn());
-        this.add(makeCancelBtn());
+        this.add(makeCloseBtn());
         this.setVisible(true);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
@@ -23,21 +23,21 @@ public class PromptThree extends JFrame {
     //listeners
     private ActionListener fieldListener = new ActionListener() {
         public void actionPerformed(ActionEvent e) {
-            String text = inputText.getText();
-            text = text + "\n";
-            inputText.selectAll();
+            //ignore
         }
     };
     
     private ActionListener verifyListener = new ActionListener() {
         public void actionPerformed(ActionEvent e) {
+            String fieldText = inputText.getText();
+            //code: test if fieldText is an integer
             JOptionPane.showMessageDialog(verifyBtn, "OK");
         }
     };
     
-    private ActionListener cancelListener = new ActionListener() {
+    private ActionListener exitListener = new ActionListener() {
         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showConfirmDialog(cancelBtn, "closing");
+            System.exit(0);
         }
     };
     
@@ -55,11 +55,11 @@ public class PromptThree extends JFrame {
         return verifyBtn;
     }
     
-    private JButton makeCancelBtn() {
-        cancelBtn.setText("Cancel");
-        cancelBtn.setBounds(80, 120, 100, 30);
-        cancelBtn.addActionListener(cancelListener);
-        return cancelBtn;
+    private JButton makeCloseBtn() {
+        closeBtn.setText("Close");
+        closeBtn.setBounds(80, 120, 100, 30);
+        closeBtn.addActionListener(exitListener);
+        return closeBtn;
     }
     
     public static void main(String[] args) throws Exception {

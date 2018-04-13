@@ -5,7 +5,7 @@ public class PromptFour {
     private static void writeFile(String filename, String data) throws Exception {
         File file = new File(filename);
         file.createNewFile();
-        FileOutputStream stream = new FileOutputStream(file);
+        FileOutputStream stream = new FileOutputStream(file, true);
         
         byte[] dataBytes = data.getBytes();
         
